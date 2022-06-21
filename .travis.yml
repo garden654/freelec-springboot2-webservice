@@ -19,3 +19,6 @@ notifications:
   email:
     recipients:
       - gardensdv33@gmail.com
+
+before_script:
+  - chmod +x gradlew
