@@ -1,7 +1,7 @@
 package com.jojoldu.book.springboot.web.dto;
 
-import com.jojoldu.book.springboot.domain.user.Role;
-import com.jojoldu.book.springboot.domain.user.User;
+import com.jojoldu.book.springboot.web.domain.user.Role;
+import com.jojoldu.book.springboot.web.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
 

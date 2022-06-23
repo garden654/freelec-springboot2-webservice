@@ -1,6 +1,6 @@
 package com.jojoldu.book.springboot.config.auth.dto;
 
-import com.jojoldu.book.springboot.domain.user.User;
+import com.jojoldu.book.springboot.web.domain.user.User;
 import lombok.Getter;
 
 import java.io.Serializable;

@@ -2,8 +2,8 @@ package com.jojoldu.book.springboot.config.auth;
 
 import com.jojoldu.book.springboot.web.dto.OAuthAttributes;
 import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
-import com.jojoldu.book.springboot.domain.user.User;
-import com.jojoldu.book.springboot.domain.user.UserRepository;
+import com.jojoldu.book.springboot.web.domain.user.User;
+import com.jojoldu.book.springboot.web.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.
                                     SimpleGrantedAuthority;
