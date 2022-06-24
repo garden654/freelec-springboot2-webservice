@@ -10,12 +10,20 @@ var main = {
         $('#btn-delete').on('click', function (){
             _this.delete();
         });
+        if($('#isUser').val() == 1) {
+            document.getElementById("btn-update").style.display="block";
+            document.getElementById("btn-delete").style.display="block";
+        } else {
+            document.getElementById("btn-update").style.display="none";
+            document.getElementById("btn-delete").style.display="none";
+        }
     },
     save : function () {
         var data = {
             title: $('#title').val(),
             author: $('#author').val(),
-            content: $('#content').val()
+            content: $('#content').val(),
+            userName: $('#userName').val()
         };
         $.ajax({
             type: 'POST',
