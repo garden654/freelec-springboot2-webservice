@@ -20,32 +20,25 @@ public class IndexController {
     private final PostsService postsService;
 
     @GetMapping("/")
-    public String index(Model model, @LoginUser SessionUser user, HttpSession session) {
-        model.addAttribute("posts", postsService.
-findAllDesc());
-        if (user != null) {
+    public String index(Model model, @LoginUser SessionUser user){
+        // model: 서버 템플릿 엔진에서 사용할 수 있는 개체 저장 가능.
+        // 이제 어느 컨트롤러든지 @LogintUser만 사용하면 세션 정보 가져올 수 있다.
+        model.addAttribute("posts", postsService.findAllDesc());
+        if (user != null){
             model.addAttribute("userName", user.getName());
-            session.setAttribute("userName", user.getName());
-        }
+        }  // 세션에 저장된 값이 있을때만 모델에 userName 등록
         return "index";
     }
 
     @GetMapping("/posts/save")
-    public String postsSave() {
+    public String postsSave(){
         return "posts-save";
     }
 
     @GetMapping("/posts/update/{id}")
-    public String postsUpdate(@PathVariable Long id, Model model, HttpSession session) {
-
+    public String postsUpdate(@PathVariable Long id, Model model){
         PostsResponseDto dto = postsService.findById(id);
         model.addAttribute("post", dto);
-        String userName = (String) session.getAttribute("userName");
-        if(dto.getUserName() == userName) {
-            model.addAttribute("isUser", 1);
-        } else {
-            model.addAttribute("isUser", 0);
-        }
 
         return "posts-update";
     }
