@@ -9,13 +9,13 @@ var main = {
         });
         $('#btn-delete').on('click', function (){
             _this.delete();
-        })
+        });
     },
     save : function (){
         var data = {
             title: $('#title').val(),
             author: $('#author').val(),
-            content: $('#content').val(),
+            content: $('#content').val()
         };
 
         $.ajax({
