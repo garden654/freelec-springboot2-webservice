@@ -19,7 +19,7 @@ var main = {
         };
 
         $.ajax({
-            type: 'POST',    // 생성(Create)
+            type: 'POST',
             url: '/api/v1/posts',
             dataType: 'json',
             contentType: 'application/json; charset=utf-8',
